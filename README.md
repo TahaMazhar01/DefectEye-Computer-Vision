@@ -41,19 +41,18 @@ A patch that looks unlike anything in the normal data gets a high Mahalanobis di
 
 ## 📊 Results (MVTec AD)
 
-Fill in after running `src.evaluate`. Reported metric is AUROC (higher is better).
+Evaluated on the **MVTec AD** test sets. Metric is AUROC (higher is better).
 
 | Category | Backbone | Image AUROC | Pixel AUROC |
 |----------|----------|-------------|-------------|
-| bottle   | wide_resnet50_2 | _–_ | _–_ |
-| hazelnut | wide_resnet50_2 | _–_ | _–_ |
-| cable    | wide_resnet50_2 | _–_ | _–_ |
+| bottle   | wide_resnet50_2 | **1.000** | **0.983** |
 
-> Reference (PaDiM paper, WideResNet-50): ~0.98 image-level / ~0.98 pixel-level averaged across MVTec categories.
+> More categories (resnet18 backbone) are being added to this table.
+> Reference (PaDiM paper, WideResNet-50): ~0.98 image / ~0.98 pixel averaged across MVTec.
 
-Sample output (input | prediction | ground truth):
+Sample output — **input | predicted defect heatmap | ground-truth mask**:
 
-<!-- ![samples](results/bottle_wide_resnet50_2_samples.png) -->
+![samples](results/bottle_wide_resnet50_2_samples.png)
 
 ## 🚀 Quickstart
 

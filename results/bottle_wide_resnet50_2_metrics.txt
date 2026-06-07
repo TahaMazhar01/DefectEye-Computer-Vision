@@ -1,0 +1,4 @@
+category=bottle
+backbone=wide_resnet50_2
+image_auroc=1.0000
+pixel_auroc=0.9826
