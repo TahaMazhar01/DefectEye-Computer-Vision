@@ -6,6 +6,6 @@ scipy
 scikit-learn
 opencv-python-headless
 matplotlib
-gradio>=4.0
+gradio>=5.0
 tqdm
 audioop-lts; python_version >= "3.13"   # pydub needs audioop, removed from stdlib in py3.13
