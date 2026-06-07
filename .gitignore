@@ -1,0 +1,18 @@
+# data & model weights are large — keep them out of git
+data/*
+!data/.gitkeep
+models/*
+!models/.gitkeep
+
+# python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# os
+.DS_Store
+Thumbs.db
