@@ -9,7 +9,7 @@ DefectEye is a from-scratch implementation of **PaDiM** (Patch Distribution Mode
 <!-- Replace with your own GIF/screenshot after running the demo -->
 <!-- ![demo](results/demo.gif) -->
 
-**🔗 Live demo:** _add your Hugging Face Spaces link here_
+**🔗 Live demo:** https://huggingface.co/spaces/TahaMazhar01/DefectEye
 **📓 Training notebook:** [`notebooks/DefectEye_Kaggle.ipynb`](notebooks/DefectEye_Kaggle.ipynb)
 
 ---
