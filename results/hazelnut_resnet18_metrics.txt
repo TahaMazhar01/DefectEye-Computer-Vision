@@ -1,0 +1,4 @@
+category=hazelnut
+backbone=resnet18
+image_auroc=0.7886
+pixel_auroc=0.9688

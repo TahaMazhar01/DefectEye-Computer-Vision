@@ -41,18 +41,41 @@ A patch that looks unlike anything in the normal data gets a high Mahalanobis di
 
 ## 📊 Results (MVTec AD)
 
-Evaluated on the **MVTec AD** test sets. Metric is AUROC (higher is better).
+Evaluated on the **MVTec AD** test sets. Metric is AUROC (higher = better).
 
 | Category | Backbone | Image AUROC | Pixel AUROC |
-|----------|----------|-------------|-------------|
+|----------|----------|------------:|------------:|
 | bottle   | wide_resnet50_2 | **1.000** | **0.983** |
+| bottle   | resnet18 | 0.995 | 0.979 |
+| carpet   | resnet18 | 0.992 | 0.987 |
+| wood     | resnet18 | 0.984 | 0.925 |
+| tile     | resnet18 | 0.967 | 0.900 |
+| cable    | resnet18 | 0.866 | 0.943 |
+| hazelnut | resnet18 | 0.789 | 0.969 |
 
-> More categories (resnet18 backbone) are being added to this table.
+> `resnet18` is the lightweight, deployable backbone (the live demo uses it). Switching to
+> `wide_resnet50_2` lifts results substantially on the harder object classes (e.g. bottle → **1.000 / 0.983**).
 > Reference (PaDiM paper, WideResNet-50): ~0.98 image / ~0.98 pixel averaged across MVTec.
 
 Sample output — **input | predicted defect heatmap | ground-truth mask**:
 
-![samples](results/bottle_wide_resnet50_2_samples.png)
+![bottle](results/bottle_wide_resnet50_2_samples.png)
+![carpet](results/carpet_resnet18_samples.png)
+
+## ⚠️ Limitations (and how to handle them)
+
+PaDiM models *"what normal looks like."* It flags **anything that deviates** from the training
+distribution — it has no built-in notion of *defect* vs *legitimate change*.
+
+- **A new product design will be flagged as anomalous** (a false positive), because it simply looks
+  different from the "normal" the model was shown.
+- **Fix:** add a handful of *defect-free* photos of the new design and re-fit — no defect labels needed.
+- **In production:** keep one model per product line / SKU (each line makes one known product).
+- **Heuristic:** a real defect tends to be a small, *localized* hot region; a whole-image difference
+  often signals a design/lighting change rather than a defect.
+
+This is the inherent trade-off of unsupervised anomaly detection: it needs **no defect labels**, in
+exchange for you defining what *normal* is.
 
 ## 🚀 Quickstart
 

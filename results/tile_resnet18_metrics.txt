@@ -1,0 +1,4 @@
+category=tile
+backbone=resnet18
+image_auroc=0.9668
+pixel_auroc=0.9003

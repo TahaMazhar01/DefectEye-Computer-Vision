@@ -1,0 +1,4 @@
+category=cable
+backbone=resnet18
+image_auroc=0.8658
+pixel_auroc=0.9431

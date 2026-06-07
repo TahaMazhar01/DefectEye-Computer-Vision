@@ -1,0 +1,4 @@
+category=carpet
+backbone=resnet18
+image_auroc=0.9920
+pixel_auroc=0.9873
